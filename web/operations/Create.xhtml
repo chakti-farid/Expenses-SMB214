@@ -12,15 +12,14 @@
             <h:form id="OperationsCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{operationsController.selected != null}">
-                        <p:outputLabel value="#{familyBundle.CreateOperationsLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{operationsController.selected.id}" title="#{familyBundle.CreateOperationsTitle_id}" required="true" requiredMessage="#{familyBundle.CreateOperationsRequiredMessage_id}"/>
+                        
                         <p:outputLabel value="#{familyBundle.CreateOperationsLabel_date}" for="date" />
                         <p:calendar id="date" pattern="MM/dd/yyyy" value="#{operationsController.selected.date}" title="#{familyBundle.EditOperationsTitle_date}" required="true" requiredMessage="#{familyBundle.EditOperationsRequiredMessage_date}" showOn="button"/>
                         <p:outputLabel value="#{familyBundle.CreateOperationsLabel_amount}" for="amount" />
                         <p:inputText id="amount" value="#{operationsController.selected.amount}" title="#{familyBundle.CreateOperationsTitle_amount}" required="true" requiredMessage="#{familyBundle.CreateOperationsRequiredMessage_amount}"/>
                         <p:outputLabel value="User" for="userId" />
                         <p:selectOneMenu id="userId" value="#{operationsController.selected.userId}" required="true" requiredMessage="#{familyBundle.EditOperationsRequiredMessage_userId}">
-                            <f:selectItems value="#{usersController.itemsAvailableSelectOne}"
+                            <f:selectItems value="#{usersController.itemsAvailableSelectId}"
                                            var="userIdItem"
                                            itemValue="#{userIdItem}"/>
                         </p:selectOneMenu>

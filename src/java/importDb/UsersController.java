@@ -127,6 +127,16 @@ public class UsersController implements Serializable {
 
         return items;
     } 
+    
+        public List<Users> getItemsAvailableSelectId() {
+
+        FacesContext context = FacesContext.getCurrentInstance();
+            String test = (String) context.getExternalContext().getSessionMap().get("key");
+            int user_id = (int) context.getExternalContext().getSessionMap().get("session_userid");
+             items = getFacade().findById(user_id);
+
+        return items;
+    } 
 
     @FacesConverter(forClass = Users.class)
     public static class UsersControllerConverter implements Converter {
